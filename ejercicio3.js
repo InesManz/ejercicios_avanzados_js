@@ -34,20 +34,17 @@ const users = [
     },
   ];
 
-  function countFavoriteSounds(users){
+  const countFavoriteSounds = (users) => {
     let soundCount = {};
-
-    for (const user of users){
-        for (const sound in user.favoritesSounds){
-            if (soundCount[sound]){
-                soundCount[sound]++;
-            } else {
-                soundCount[sound]= 1;
-            }           
-        }
+  
+    for (const user of users) {
+      for (const sound in user.favoritesSounds) {
+        soundCount[sound] = (soundCount[sound] || 0) + 1;
+      }
     }
+  
     return soundCount;
-
-  }
-
+  };
+  
   console.log(countFavoriteSounds(users));
+  

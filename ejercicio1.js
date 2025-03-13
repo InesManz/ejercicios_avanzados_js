@@ -22,14 +22,15 @@ const movies = [
     },
   ];
 
-  const categories = [];
-
-  for (const movie of movies){
-    for (const category of movie.categories){
-    if(!categories.includes(category)){
-        categories.push(category)
+  const categoriesAll = (movies) =>{
+    const categories = new Set();
+    for (const movie of movies){
+      for (const category of movie.categories){
+        categories.push(category);
+      }
     }
-  }
-}
+    return [...categories];
+  };
 
-console.log(categories);
+ 
+console.log(categoriesAll(movies));

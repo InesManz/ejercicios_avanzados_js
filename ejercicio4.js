@@ -4,15 +4,12 @@ function findArrayIndex(array, text) {
     return array.findIndex(element =>element===text);
 }
 
-function removeItem(array, text){
+const removeItem = (array,text) => {
     const index = findArrayIndex(array, text);
-    
-    if (index !==-1){
-        array.splice(index,1);
-    }
-
+    if (index !==-1)array.splice(index,1);
     return array;
 }
+
 
 const mainCharacters = [
   "Luke",

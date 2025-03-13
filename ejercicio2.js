@@ -34,18 +34,20 @@ const users = [
     },
   ];
 
-  function calculateAverageVolume (users){
+  
+  const calculateAverageVolume = (users) => {
     let totalVolume = 0;
     let quantitySounds = 0;
-
-    for (const user of users){
-        for (const sound in user.favoritesSounds){
-            totalVolume += user.favoritesSounds[sound].volume;
-            quantitySounds++;
-        }
+  
+    for (const user of users) {
+      for (const sound in user.favoritesSounds) {
+        totalVolume += user.favoritesSounds[sound].volume;
+        quantitySounds++;
+      }
     }
-
-    return totalVolume/quantitySounds;
-  }
-
+  
+    return totalVolume / quantitySounds;
+  };
+  
   console.log("El volumen medio es: " + calculateAverageVolume(users));
+  
